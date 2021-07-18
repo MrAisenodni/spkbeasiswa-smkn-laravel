@@ -11,7 +11,7 @@ class SiswaModel extends Model
         return DB::table('siswa')->get();
     }
 
-    public function getCountAllData() {
+    public function getCount() {
         return DB::table('siswa')->count();
     }
 }

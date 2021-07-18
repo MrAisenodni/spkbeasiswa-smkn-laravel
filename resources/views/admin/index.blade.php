@@ -58,7 +58,7 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>36</h3>
+                        <h3>{{ $csiswa }}</h3>
 
                         <p>Siswa</p>
                     </div>

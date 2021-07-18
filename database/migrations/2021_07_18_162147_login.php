@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Siswa extends Migration
+class Login extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class Siswa extends Migration
      */
     public function up()
     {
-        // Migrasi Tabel Siswa
-        Schema::create('siswa', function (Blueprint $table) {
-            $table->id('id_siswa');
-            $table->string('nim', 10)->unique();
-            $table->string('nama', 100);
-            $table->string('email')->unique();
-            $table->string('no_hp', 13)->unique();
-            $table->longtext('alamat');
+        // Migrasi Tabel Login
+        Schema::create('login', function (Blueprint $table) {
+            $table->id('id_login');
+            $table->string('username', 18);
+            $table->string('password');
+            $table->rememberToken();
+            $table->enum('akses', ['usr', 'adm']);
             $table->datetime('created_at')->nullable();
             $table->string('created_by')->nullable();
             $table->datetime('updated_at')->nullable();
@@ -37,7 +36,7 @@ class Siswa extends Migration
      */
     public function down()
     {
-        // Drop Tabel Siswa
-        Schema::dropIfExists('siswa');
+        // Drop Tabel Login
+        Schema::dropIfExists('login');
     }
 }

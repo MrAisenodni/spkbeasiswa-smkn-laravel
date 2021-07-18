@@ -10,4 +10,9 @@ class RankModel extends Model
     public function getAllData() {
         return DB::table('rank')->get();
     }
+
+    public function getCountData($data) {
+        return DB::table('rank')
+                    ->where()
+    }
 }
