@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Rank extends Migration
+class Kriteria extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,12 @@ class Rank extends Migration
      */
     public function up()
     {
-        // Migrasi Tabel Rank
-        Schema::create('rank', function (Blueprint $table) {
-            $table->id('id_rank');
-            $table->bigInt('id_siswa');
-            $table->float('penghasilan', 5, 2);
-            $table->float('kepemilikan', 5, 2);
-            $table->float('kondisi', 5, 2);
-            $table->float('anggota', 5, 2);
-            $table->float('kendaraan', 5, 2);
-            $table->float('kebutuhan', 5, 2);
-            $table->float('pembayaran', 5, 2);
-            $table->float('jarak', 5, 2);
-            $table->float('total', 5, 2);
+        // Migrasi Tabel Kriteria
+        Schema::create('kriteria', function (Blueprint $table) {
+            $table->id('id_kriteria');
+            $table->string('kd_kriteria', 4);
+            $table->string('nama', 100);
+            $table->float('bobot', 5, 2);
             $table->datetime('created_at')->nullable();
             $table->string('created_by')->nullable();
             $table->datetime('updated_at')->nullable();
@@ -42,7 +35,7 @@ class Rank extends Migration
      */
     public function down()
     {
-        // Drop Tabel Rank
-        Schema::dropIfExists('rank');
+        // Drop Tabel Kriteria
+        Schema::dropIfExists('kriteria');
     }
 }
