@@ -13,7 +13,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>15</h3>
+                            <h3>{{ $cyrank }}</h3>
 
                             <p>Diterima</p>
                         </div>
@@ -28,7 +28,7 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>13</h3>
+                        <h3>{{ $cmrank }}</h3>
 
                         <p>Dipertimbangkan</p>
                     </div>
@@ -43,7 +43,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3>8</h3>
+                        <h3>{{ $cnrank }}</h3>
 
                         <p>Tidak Diterima</p>
                     </div>

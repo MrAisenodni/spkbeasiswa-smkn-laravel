@@ -14,4 +14,21 @@ class RankModel extends Model
     public function getCount() {
         return DB::table('rank')->count();
     }
+
+    public function getCountData($data) {
+        if ($data == 'y') {
+            return DB::table('rank')
+                        ->where('total', '>', 75)
+                        ->count();
+        } else if ($data == 'm') {
+            return DB::table('rank')
+                        ->where('total', '<=', 75)
+                        ->where('total', '>', 50)
+                        ->count();
+        } else {
+            return DB::table('rank')
+                        ->where('total', '<=', 50)
+                        ->count();
+        }
+    }
 }
