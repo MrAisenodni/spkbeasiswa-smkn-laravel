@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Siswa extends Migration
+class Pengguna extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class Siswa extends Migration
      */
     public function up()
     {
-        // Migrasi Tabel Siswa
-        Schema::create('siswa', function (Blueprint $table) {
-            $table->id('id_siswa');
-            $table->string('nim', 10)->unique();
+        // Migrasi Tabel Pengguna
+        Schema::create('pengguna', function (Blueprint $table) {
+            $table->id('id_pengguna');
             $table->string('nama', 100);
             $table->unique('email');
             $table->string('no_hp', 13)->unique();
@@ -37,7 +36,7 @@ class Siswa extends Migration
      */
     public function down()
     {
-        // Drop Tabel Siswa
-        Schema::dropIfExists('siswa');
+        // Drop Tabel Pengguna
+        Schema::dropIfExists('pengguna');
     }
 }
