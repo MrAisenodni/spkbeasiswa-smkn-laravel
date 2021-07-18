@@ -11,8 +11,7 @@ class RankModel extends Model
         return DB::table('rank')->get();
     }
 
-    public function getCountData($data) {
-        return DB::table('rank')
-                    ->where()
+    public function getCount() {
+        return DB::table('rank')->count();
     }
 }
