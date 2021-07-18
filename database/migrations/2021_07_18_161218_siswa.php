@@ -17,6 +17,7 @@ class Siswa extends Migration
         Schema::create('siswa', function (Blueprint $table) {
             $table->id('id_siswa');
             $table->string('nim', 10)->unique();
+            $table->enum('jenkel', ['l', 'p']);
             $table->string('nama', 100);
             $table->unique('email');
             $table->string('no_hp', 13)->unique();

@@ -17,6 +17,7 @@ class Pengguna extends Migration
         Schema::create('pengguna', function (Blueprint $table) {
             $table->id('id_pengguna');
             $table->string('nama', 100);
+            $table->enum('jenkel', ['l', 'p']);
             $table->unique('email');
             $table->string('no_hp', 13)->unique();
             $table->longText('alamat');
