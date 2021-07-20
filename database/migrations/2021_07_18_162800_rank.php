@@ -16,7 +16,7 @@ class Rank extends Migration
         // Migrasi Tabel Rank
         Schema::create('rank', function (Blueprint $table) {
             $table->id('id_rank');
-            $table->bigInt('id_siswa');
+            $table->bigInteger('id_siswa');
             $table->float('penghasilan', 5, 2);
             $table->float('kepemilikan', 5, 2);
             $table->float('kondisi', 5, 2);

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Subsubkriteria extends Migration
+class Subkriteria extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +16,7 @@ class Subsubkriteria extends Migration
         // Migrasi Tabel Subkriteria
         Schema::create('subkriteria', function (Blueprint $table) {
             $table->id('id_subkriteria');
-            $table->bigInt('id_kriteria');
+            $table->bigInteger('id_kriteria');
             $table->string('nama', 100);
             $table->float('bobot', 5, 2);
             $table->datetime('created_at')->nullable();

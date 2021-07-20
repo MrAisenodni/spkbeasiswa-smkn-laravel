@@ -28,6 +28,15 @@ class PenggunaSeeder extends Seeder
                     'created_at'=> $current_time,
                     'created_by'=> 'Admin',
                 ],
+                [
+                    'nama'      => 'User',
+                    'jenkel'    => 'p',
+                    'email'     => 'user@gmail.com',
+                    'no_hp'     => '0895333093116',
+                    'alamat'    => 'Jl Narogong Raya No 77, Kel Bojong Rawalumbu, Kec Rawalumbu, Kota Bekasi 17116',
+                    'created_at'=> $current_time,
+                    'created_by'=> 'Admin',
+                ],
             ]);
     }
 }

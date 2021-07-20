@@ -16,8 +16,8 @@ class Login extends Migration
         // Migrasi Tabel Login
         Schema::create('login', function (Blueprint $table) {
             $table->id('id_login');
-            $table->bigInt('id_siswa')->nullable();
-            $table->bigInt('id_pengguna')->nullable();
+            $table->bigInteger('id_siswa')->nullable();
+            $table->bigInteger('id_pengguna')->nullable();
             $table->string('username', 18);
             $table->string('password');
             $table->rememberToken('token');

@@ -19,7 +19,7 @@ class Siswa extends Migration
             $table->string('nim', 10)->unique();
             $table->enum('jenkel', ['l', 'p']);
             $table->string('nama', 100);
-            $table->unique('email');
+            $table->string('email')->unique();
             $table->string('no_hp', 13)->unique();
             $table->longText('alamat');
             $table->datetime('created_at')->nullable();

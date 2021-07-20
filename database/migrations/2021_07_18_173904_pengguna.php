@@ -18,7 +18,7 @@ class Pengguna extends Migration
             $table->id('id_pengguna');
             $table->string('nama', 100);
             $table->enum('jenkel', ['l', 'p']);
-            $table->unique('email');
+            $table->string('email')->unique();
             $table->string('no_hp', 13)->unique();
             $table->longText('alamat');
             $table->datetime('created_at')->nullable();
