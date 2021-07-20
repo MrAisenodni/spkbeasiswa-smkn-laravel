@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
 class SiswaSeeder extends Seeder
@@ -26,7 +27,7 @@ class SiswaSeeder extends Seeder
                             'no_hp'     => '0895333093116',
                             'alamat'    => 'Jl Masjid No 31',
                             'created_at'=> $current_time,
-                            'created+by'=> 'Admin',
+                            'created_by'=> 'Admin',
                         ],
                     ]);
     }
