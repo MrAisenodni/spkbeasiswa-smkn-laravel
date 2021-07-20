@@ -13,15 +13,24 @@
                         @csrf
                         <div class="form-group">
                             <label for="kd_kriteria">Kode Kriteria</label>
-                            <input type="text" class="form-control" id="kd_kriteria" name="kd_kriteria" value="{{ old('kd_kriteria') }}">
+                            <input type="text" class="form-control @error('kd_kriteria') is-invalid @enderror" id="kd_kriteria" name="kd_kriteria" value="{{ old('kd_kriteria') }}">
+                            @error('kd_kriteria')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <label for="nama">Nama Kriteria</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}">
+                            <label for="nama_kriteria">Nama Kriteria</label>
+                            <input type="text" class="form-control @error('nama_kriteria') is-invalid @enderror" id="nama_kriteria" name="nama_kriteria" value="{{ old('nama_kriteria') }}">
+                            @error('nama_kriteria')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <label for="bobot">Bobot Kriteria</label>
-                            <input type="text" class="form-control" id="bobot" name="bobot" value="{{ old('bobot') }}">
+                            <label for="bobot_kriteria">Bobot Kriteria</label>
+                            <input type="text" class="form-control @error('bobot_kriteria') is-invalid @enderror" id="bobot_kriteria" name="bobot_kriteria" value="{{ old('bobot_kriteria') }}">
+                            @error('nama_kriteria')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                             <div class="modal-footer">
                                 <a href="/admin/kriteria">

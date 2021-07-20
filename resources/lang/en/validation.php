@@ -79,26 +79,26 @@ return [
     ],
     'max' => [
         'numeric' => 'The :attribute must not be greater than :max.',
-        'file' => 'The :attribute must not be greater than :max kilobytes.',
-        'string' => 'The :attribute must not be greater than :max characters.',
+        'file' => ucfirst(':attribute').' tidak boleh lebih besar dari :max kilobytes.',
+        'string' => ucfirst(':attribute').' tidak boleh lebih besar dari :max karakter.',
         'array' => 'The :attribute must not have more than :max items.',
     ],
     'mimes' => 'The :attribute must be a file of type: :values.',
     'mimetypes' => 'The :attribute must be a file of type: :values.',
     'min' => [
         'numeric' => 'The :attribute must be at least :min.',
-        'file' => 'The :attribute must be at least :min kilobytes.',
-        'string' => 'The :attribute must be at least :min characters.',
+        'file' => ucfirst(':attribute').' harus lebih besar dari :min kilobytes.',
+        'string' => ucfirst(':attribute').' harus lebih besar dari :min karakter.',
         'array' => 'The :attribute must have at least :min items.',
     ],
     'multiple_of' => 'The :attribute must be a multiple of :value.',
     'not_in' => 'The selected :attribute is invalid.',
     'not_regex' => 'The :attribute format is invalid.',
-    'numeric' => 'The :attribute must be a number.',
+    'numeric' => ucfirst(':attribute').' yang dimasukkan harus angka.',
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute field is required.',
+    'required' => ucfirst(':attribute').' harus diisi.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
@@ -118,7 +118,7 @@ return [
     'starts_with' => 'The :attribute must start with one of the following: :values.',
     'string' => 'The :attribute must be a string.',
     'timezone' => 'The :attribute must be a valid timezone.',
-    'unique' => 'The :attribute has already been taken.',
+    'unique' => ':attribute sudah pernah digunakan.',
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute must be a valid URL.',
     'uuid' => 'The :attribute must be a valid UUID.',
@@ -151,6 +151,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'kd_kriteria'       => 'Kode Kriteria',
+        'nama_kriteria'     => 'Nama Kriteria',
+        'bobot_kriteria'     => 'Bobot Kriteria',
+    ],
 
 ];

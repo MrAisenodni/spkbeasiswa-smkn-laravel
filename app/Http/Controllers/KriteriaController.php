@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\KriteriaModel;
+use Carbon\Carbon;
 
 class KriteriaController extends Controller
 {
     public function __construct() {
         $this->kriteria = new KriteriaModel();
+        $current_time   = Carbon::now()->toDateTimeString();
     }
 
     /**
@@ -45,7 +47,30 @@ class KriteriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
+        $validated = $request->validate([
+            'kd_kriteria'   => 'required|max:4|unique:kriteria,kd_kriteria',
+            'nama_kriteria' => 'required',
+            'bobot_kriteria'=> 'required',
+        ]);
+
+        $data = [
+            'kd_kriteria'   => $request->kd_kriteria,
+            'nama'          => $request->nama_kriteria,
+            'bobot'         => $request->bobot_kriteria,
+            'created_at'    => $current_time,
+            'created_by'    => 'Admin',
+        ];
+
+        dd($data);
+
+        $save = $this->kriteria->tambahData($data);
+
+        if ($save) {
+            return redirect('/admin/kriteria')->with('status', 'Data kriteria berhasil ditambahkan.');
+        } else {
+            return redirect('/admin/kriteria')->with('error', 'Data kriteria gagal ditambahkan.');
+        }
     }
 
     /**
