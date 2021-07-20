@@ -20,7 +20,7 @@ class KriteriaController extends Controller
      */
     public function index()
     {
-        // Menampilkan Halaman Kriteria
+        // Menampilkan Halaman Utama
         $data = [
             'kriteria'      => $this->kriteria->getAllData(),
         ];
@@ -35,7 +35,7 @@ class KriteriaController extends Controller
      */
     public function create()
     {
-        // Menampilkan Halaman Tambah Kriteria
+        // Menampilkan Halaman Tambah
         return view('admin.kriteria.create');
     }
 
@@ -47,7 +47,7 @@ class KriteriaController extends Controller
      */
     public function store(Request $request)
     {
-        // 
+        // Memasukkan Data ke dalam Database
         $validated = $request->validate([
             'kd_kriteria'   => 'required|max:4|unique:kriteria,kd_kriteria',
             'nama_kriteria' => 'required',
@@ -113,6 +113,13 @@ class KriteriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Menghapus Data dari Database
+        $save = $this->kriteria->hapusData($id);
+
+        if ($save) {
+            return redirect('/admin/kriteria')->with('status', 'Data kriteria berhasil dihapus.');
+        } else {
+            return redirect('/admin/kriteria')->with('error', 'Data kriteria gagal dihapus.');
+        }
     }
 }

@@ -15,4 +15,10 @@ class KriteriaModel extends Model
     public function tambahData($data) {
         return DB::table('kriteria')->insert($data);
     }
+
+    public function hapusData($id) {
+        return DB::table('kriteria')
+                    ->where('id_kriteria', $id)
+                    ->delete();
+    }
 }

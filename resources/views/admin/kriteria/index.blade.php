@@ -49,12 +49,12 @@
                                             <a href="/admin/kriteria/{{ $data->id_kriteria }}" class="btn btn-info">
                                                 <i class="fas fa-list"></i>
                                             </a>
-                                            <form action="/admin/kriteria/{{ $data->id_kriteria }}" class="d-inline">
+                                            <form method="POST" action="/admin/kriteria/{{ $data->id_kriteria }}" class="d-inline">
                                                 @method('DELETE')
                                                 @csrf
-                                                <a class="btn btn-danger">
+                                                <button type="submit" class="btn btn-danger">
                                                     <i class="fas fa-trash"></i>
-                                                </a>
+                                                </button>
                                             </form>
                                         </td>
                                     </tr>
