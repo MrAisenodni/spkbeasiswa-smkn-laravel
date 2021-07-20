@@ -13,11 +13,19 @@ class KriteriaModel extends Model
     }
 
     public function getData($id) {
-        return DB::table('kriteria')->first();
+        return DB::table('kriteria')
+                    ->where('id_kriteria', $id)
+                    ->first();
     }
 
     public function tambahData($data) {
         return DB::table('kriteria')->insert($data);
+    }
+
+    public function ubahData($data, $id) {
+        return DB::table('kriteria')
+                    ->where('id_kriteria', $id)
+                    ->update($data);
     }
 
     public function hapusData($id) {

@@ -95,7 +95,12 @@ class KriteriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Menampilkan Halaman Edit
+        $data = [
+            'kriteria'      => $this->kriteria->getData($id),
+        ];
+
+        return view('admin.kriteria.edit', $data);
     }
 
     /**
@@ -108,6 +113,27 @@ class KriteriaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validated = $request->validate([
+            'kd_kriteria'   => 'required|max:4|unique:kriteria,kd_kriteria,'.$id.',id_kriteria',
+            'nama_kriteria' => 'required',
+            'bobot_kriteria'=> 'required|numeric',
+        ]);
+
+        $data = [
+            'kd_kriteria'   => $request->kd_kriteria,
+            'nama'          => $request->nama_kriteria,
+            'bobot'         => $request->bobot_kriteria,
+            'updated_at'    => $this->current_time,
+            'updated_by'    => 'Admin',
+        ];
+
+        $save = $this->kriteria->ubahData($data, $id);
+
+        if ($save) {
+            return redirect('/admin/kriteria')->with('status', 'Data kriteria berhasil diubah.');
+        } else {
+            return redirect('/admin/kriteria')->with('error', 'Data kriteria gagal diubah.');
+        }
     }
 
     /**
