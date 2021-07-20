@@ -12,6 +12,10 @@ class KriteriaModel extends Model
         return DB::table('kriteria')->get();
     }
 
+    public function getData($id) {
+        return DB::table('kriteria')->first();
+    }
+
     public function tambahData($data) {
         return DB::table('kriteria')->insert($data);
     }

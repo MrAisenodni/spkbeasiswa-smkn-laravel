@@ -79,7 +79,12 @@ class KriteriaController extends Controller
      */
     public function show($id)
     {
-        //
+        // Menampilkan Halaman Detail 
+        $data = [
+            'kriteria'      => $this->kriteria->getData($id),
+        ];
+
+        return view('admin.kriteria.show', $data);
     }
 
     /**

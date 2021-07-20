@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Kriteria')
+@section('title', 'Tambah Kriteria')
     
 @section('container')
 
