@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="{{ url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 <!-- summernote -->
 <link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.min.css') }}">
+<!-- Data Tables -->
+<link type="text/css" rel="stylesheet" href="{{ url('dist/css/dataTables.min.css') }}">
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{{ url('dist/css/custom.css') }}">
 </head>
@@ -75,6 +77,14 @@
                 <i class="nav-icon fas fa-sort-alpha-up"></i>
                 <p>
                     Kriteria
+                </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/admin/subkriteria" class="nav-link">
+                <i class="nav-icon fas fa-sort-alpha-down"></i>
+                <p>
+                    Subkriteria
                 </p>
                 </a>
             </li>
@@ -150,10 +160,8 @@
 
 <!-- jQuery -->
 <script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-$.widget.bridge('uibutton', $.ui.button)
-</script>
+<!-- JS Data Tables -->
+<script type="text/javascript" src="{{ url('dist/js/dataTables.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- Sparkline -->

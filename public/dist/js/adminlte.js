@@ -2931,6 +2931,9 @@
    * jQuery API
    * ====================================================
    */
+  $(document).ready( function () {
+    $('#data-table').DataTable();
+  } );
 
   $__default['default'].fn[NAME] = Treeview._jQueryInterface;
   $__default['default'].fn[NAME].Constructor = Treeview;

@@ -154,7 +154,9 @@ return [
     'attributes' => [
         'kd_kriteria'       => 'Kode Kriteria',
         'nama_kriteria'     => 'Nama Kriteria',
-        'bobot_kriteria'     => 'Bobot Kriteria',
+        'bobot_kriteria'    => 'Bobot Kriteria',
+        'nama_subkriteria'  => 'Nama Subkriteria',
+        'bobot_subkriteria' => 'Bobot Subkriteria',
     ],
 
 ];
