@@ -9,8 +9,8 @@ use Carbon\Carbon;
 class KriteriaController extends Controller
 {
     public function __construct() {
-        $this->kriteria = new KriteriaModel();
-        $current_time   = Carbon::now()->toDateTimeString();
+        $this->kriteria         = new KriteriaModel();
+        $this->current_time     = Carbon::now()->toDateTimeString();
     }
 
     /**
@@ -51,18 +51,16 @@ class KriteriaController extends Controller
         $validated = $request->validate([
             'kd_kriteria'   => 'required|max:4|unique:kriteria,kd_kriteria',
             'nama_kriteria' => 'required',
-            'bobot_kriteria'=> 'required',
+            'bobot_kriteria'=> 'required|numeric',
         ]);
 
         $data = [
             'kd_kriteria'   => $request->kd_kriteria,
             'nama'          => $request->nama_kriteria,
             'bobot'         => $request->bobot_kriteria,
-            'created_at'    => $current_time,
+            'created_at'    => $this->current_time,
             'created_by'    => 'Admin',
         ];
-
-        dd($data);
 
         $save = $this->kriteria->tambahData($data);
 

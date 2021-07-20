@@ -28,7 +28,7 @@
                         <div class="form-group">
                             <label for="bobot_kriteria">Bobot Kriteria</label>
                             <input type="text" class="form-control @error('bobot_kriteria') is-invalid @enderror" id="bobot_kriteria" name="bobot_kriteria" value="{{ old('bobot_kriteria') }}">
-                            @error('nama_kriteria')
+                            @error('bobot_kriteria')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>

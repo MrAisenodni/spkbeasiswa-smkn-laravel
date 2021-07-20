@@ -14,6 +14,13 @@
                     <a href="/admin/kriteria/create" class="btn btn-success"><i class="fa fa-plus-circle"></i> Tambah Kriteria</a>
                     <br><br>
                 </div>
+                <div class="col-lg-12">
+                    @if (session('status'))
+                        <div class="alert alert-success">{{ session('status') }}</div>
+                    @else
+                        <div class="alert alert-danger">{{ session('error') }}</div>
+                    @endif
+                </div>
                 <!-- ./col -->
                 <div class="col-lg-12 col-12">
                     <!-- small box -->
