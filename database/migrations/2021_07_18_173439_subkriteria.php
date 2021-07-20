@@ -17,7 +17,7 @@ class Subkriteria extends Migration
         Schema::create('subkriteria', function (Blueprint $table) {
             $table->id('id_subkriteria');
             $table->bigInteger('id_kriteria');
-            $table->string('nama', 100);
+            $table->string('nama');
             $table->float('bobot', 5, 2);
             $table->datetime('created_at')->nullable();
             $table->string('created_by')->nullable();
