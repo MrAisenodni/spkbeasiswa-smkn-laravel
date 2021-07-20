@@ -20,7 +20,7 @@
                     <div class="icon">
                         <i class="fas fa-check"></i>
                     </div>
-                    <a href="ranking.php" class="small-box-footer">Lebih banyak <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/ranking" class="small-box-footer">Lebih banyak <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -35,7 +35,7 @@
                     <div class="icon">
                         <i class="fas fa-book-reader"></i>
                     </div>
-                    <a href="ranking.php" class="small-box-footer">Lebih banyak <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/ranking" class="small-box-footer">Lebih banyak <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -50,7 +50,7 @@
                     <div class="icon">
                         <i class="fas fa-times"></i>
                     </div>
-                    <a href="ranking.php" class="small-box-footer">Lebih banyak <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/ranking" class="small-box-footer">Lebih banyak <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -65,7 +65,7 @@
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="ranking.php" class="small-box-footer">Lebih banyak <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/ranking" class="small-box-footer">Lebih banyak <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -74,7 +74,7 @@
             <div class="row">
                 <div class="col-lg-12 col-12 text-center">
                     <h2 class="fw-bold">Selamat Datang Di SPK Beasiswa</h2>
-                    <img src="../dist/img/logo.png" width="35%" height="35%">
+                    <img src="{{ url('../dist/img/logo.png') }}" width="35%" height="35%">
                     <h4>(SMK Negeri 12 Jakarta Utara)</h4>
                     <p>Alamat : JL. Kebon Bawang 15</p>
                     <p>Kode Pos : 14320</p>

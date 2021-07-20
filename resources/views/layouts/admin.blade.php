@@ -3,30 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SPK Beasiswa SMKN 12 Jakarta Utara | @yield('title')</title>
+<title>@yield('title') | SPK Beasiswa SMKN 12 Jakarta Utara</title>
 
 <!-- Icon -->
-<link rel="icon" href="../dist/img/logo.png">
+<link rel="icon" href="{{ url('dist/img/logo.png') }}">
 <!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<link rel="stylesheet" href="{{ url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback') }}">
 <!-- Font Awesome -->
-<link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="{{ url('plugins/fontawesome-free/css/all.min.css') }}">
 <!-- Ionicons -->
-<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="{{ url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<link rel="stylesheet" href="{{ url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
 <!-- iCheck -->
-<link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<link rel="stylesheet" href="{{ url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 <!-- JQVMap -->
-<link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
+<link rel="stylesheet" href="{{ url('plugins/jqvmap/jqvmap.min.css') }}">
 <!-- Theme style -->
-<link rel="stylesheet" href="../dist/css/adminlte.min.css">
+<link rel="stylesheet" href="{{ url('dist/css/adminlte.min.css') }}">
 <!-- overlayScrollbars -->
-<link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<link rel="stylesheet" href="{{ url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 <!-- summernote -->
-<link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+<link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.min.css') }}">
 <!-- Custom CSS -->
-<link rel="stylesheet" href="../dist/css/custom.css">
+<link rel="stylesheet" href="{{ url('dist/css/custom.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -34,14 +34,14 @@
 
 <!-- Preloader -->
 <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="../dist/img/logo.png" alt="SMKN12" height="60" width="60">
+    <img class="animation__shake" src="{{ url('/dist/img/logo.png') }}" alt="SMKN12" height="60" width="60">
 </div>
 
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-light bg-gray">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
-        <img src="../dist/img/logo.png" alt="Logo SMKN 12" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ url('/dist/img/logo.png') }}" alt="Logo SMKN 12" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">SMKN 12</span>
     </a>
 
@@ -50,7 +50,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-            <img src="../dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">
+            <img src="{{ url('/dist/img/avatar.png') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
             <a href="#" class="d-block">Muhammad Fiqri Alfayed</a>
@@ -63,7 +63,7 @@
             <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="index.php" class="nav-link active">
+                <a href="/admin" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                     Dashboard
@@ -71,7 +71,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="kriteria.php" class="nav-link">
+                <a href="/admin/kriteria" class="nav-link">
                 <i class="nav-icon fas fa-sort-alpha-up"></i>
                 <p>
                     Kriteria
@@ -79,7 +79,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="siswa.php" class="nav-link">
+                <a href="/admin/siswa" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                     Siswa
@@ -87,7 +87,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="ranking.php" class="nav-link">
+                <a href="/admin/ranking" class="nav-link">
                 <i class="nav-icon fas fa-chart-bar"></i>
                 <p>
                     Ranking
@@ -96,7 +96,7 @@
                 <span></span>
             </li>
             <li class="nav-item bg-danger">
-                <a href="../logout.php" class="nav-link">
+                <a href="/login" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
                 <p>
                     Logout
@@ -149,29 +149,29 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="../plugins/jquery/jquery.min.js"></script>
+<script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
 $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- Sparkline -->
-<script src="../plugins/sparklines/sparkline.js"></script>
+<script src="{{ url('plugins/sparklines/sparkline.js') }}"></script>
 <!-- JQVMap -->
-<script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="{{ url('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+<script src="{{ url('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="{{ url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->
-<script src="../plugins/summernote/summernote-bs4.min.js"></script>
+<script src="{{ url('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- overlayScrollbars -->
-<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="{{ url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="../dist/js/adminlte.js"></script>
+<script src="{{ url('dist/js/adminlte.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
+<script src="{{ url('dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../dist/js/pages/dashboard.js"></script>
+<script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
 </body>
 </html>
