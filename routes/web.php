@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\SubkriteriaController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\RankController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +57,9 @@ Route::get('/admin/siswa/{id}/edit', [SiswaController::class, 'edit']);
 Route::post('/admin/siswa', [SiswaController::class, 'store']);
 Route::put('/admin/siswa/{id}', [SiswaController::class, 'update']);
 Route::delete('/admin/siswa/{id}', [SiswaController::class, 'destroy']);
+
+// Ranking
+Route::get('/admin/rank', [RankController::class, 'index']);
+Route::get('/admin/rank/create', [RankController::class, 'create']);
+Route::get('/admin/rank/{id}', [RankController::class, 'show']);
+Route::post('/admin/rank', [RankController::class, 'store']);

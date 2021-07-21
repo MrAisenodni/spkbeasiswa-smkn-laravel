@@ -97,7 +97,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/admin/ranking" class="nav-link">
+                <a href="/admin/rank" class="nav-link">
                 <i class="nav-icon fas fa-chart-bar"></i>
                 <p>
                     Ranking
