@@ -11,7 +11,7 @@
             <div class="row">
                 <!-- col button -->
                 <div class="col-lg-9">
-                    <a href="/admin/rank/laporan" class="btn btn-info"><i class="fa fa-file"></i> Laporan Ranking</a>
+                    <a href="/admin/rank/laporan" class="btn btn-info"><i class="fa fa-file-pdf"></i> Laporan Ranking</a>
                     <br><br>
                 </div>
                 <!-- ./col -->

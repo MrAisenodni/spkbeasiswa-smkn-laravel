@@ -97,6 +97,14 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="/admin/daftar" class="nav-link">
+                <i class="nav-icon fas fa-file-alt"></i>
+                <p>
+                    Pendaftaran
+                </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="/admin/rank" class="nav-link">
                 <i class="nav-icon fas fa-chart-bar"></i>
                 <p>
