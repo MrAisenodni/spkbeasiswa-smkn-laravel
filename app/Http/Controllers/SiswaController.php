@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SiswaModel;
+use Carbon\Carbon;
 
 class SiswaController extends Controller
 {
+    public function __construct() {
+        $this->siswa            = new SiswaModel();
+        $this->current_time     = Carbon::now()->toDateTimeString();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,11 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        //
+        // Menampilkan Halaman Utama
+        $data = [
+            'siswa'     => $this->siswa->getAllData(),
+        ];
+        return view('admin.siswa.index', $data);
     }
 
     /**

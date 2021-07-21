@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Subkriteria')
+@section('title', 'Siswa')
     
 @section('container')
 
@@ -11,7 +11,7 @@
             <div class="row">
                 <!-- col button -->
                 <div class="col-lg-9">
-                    <a href="/admin/subkriteria/create" class="btn btn-success"><i class="fa fa-plus-circle"></i> Tambah Subkriteria</a>
+                    <a href="/admin/siswa/create" class="btn btn-success"><i class="fa fa-plus-circle"></i> Tambah Siswa</a>
                     <br><br>
                 </div>
                 <div class="col-lg-12">
@@ -31,27 +31,33 @@
                             <thead>
                                 <tr class="text-center bg-white">
                                     <th class="border border-secondary">No.</th>
-                                    <th class="border border-secondary">Kode Kriteria</th>
+                                    <th class="border border-secondary">NIS</th>
                                     <th class="border border-secondary">Nama</th>
-                                    <th class="border border-secondary">Bobot Subkriteria</th>
+                                    <th class="border border-secondary">Jenis Kelamin</th>
                                     <th class="border border-secondary" width="15%">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($subkriteria as $data)
+                                @foreach ($siswa as $data)
                                     <tr class="text-center">
                                         <td class="border border-secondary">{{ $loop->iteration }}</td>
-                                        <td class="border border-secondary">{{ $data->kd_kriteria }}</td>
-                                        <td class="border border-secondary">{{ $data->nama_kriteria }} | {{ $data->nama }}</td>
-                                        <td class="border border-secondary">{{ $data->bobot }}</td>
+                                        <td class="border border-secondary">{{ $data->nim }}</td>
+                                        <td class="border border-secondary">{{ $data->nama }}</td>
                                         <td class="border border-secondary">
-                                            <a href="/admin/subkriteria/{{ $data->id_subkriteria }}/edit" class="btn btn-warning">
+                                            @if ($data->jenkel == 'l')
+                                                Laki-laki
+                                            @else
+                                                Permpuan
+                                            @endif
+                                        </td>
+                                        <td class="border border-secondary">
+                                            <a href="/admin/siswa/{{ $data->id_siswa }}/edit" class="btn btn-warning">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="/admin/subkriteria/{{ $data->id_subkriteria }}" class="btn btn-info">
+                                            <a href="/admin/siswa/{{ $data->id_siswa }}" class="btn btn-info">
                                                 <i class="fas fa-list"></i>
                                             </a>
-                                            <form method="POST" action="/admin/subkriteria/{{ $data->id_subkriteria }}" class="d-inline">
+                                            <form method="POST" action="/admin/siswa/{{ $data->id_siswa }}" class="d-inline">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger">
