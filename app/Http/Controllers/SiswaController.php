@@ -154,6 +154,13 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Menghapus Data dari Database
+        $save = $this->siswa->hapusData($id);
+
+        if ($save) {
+            return redirect('/admin/siswa')->with('status', 'Data siswa berhasil dihapus.');
+        } else {
+            return redirect('/admin/siswa')->with('error', 'Data siswa gagal dihapus.');
+        }
     }
 }

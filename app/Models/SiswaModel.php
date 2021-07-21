@@ -30,4 +30,10 @@ class SiswaModel extends Model
                     ->where('id_siswa', $id)
                     ->update($data);
     }
+
+    public function hapusData($id) {
+        return DB::table('siswa')
+                    ->where('id_siswa', $id)
+                    ->delete();
+    }
 }
