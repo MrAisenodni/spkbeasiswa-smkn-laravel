@@ -21,7 +21,7 @@ class SiswaSeeder extends Seeder
                     ->insert([
                         [
                             'nim'       => '1710512010',
-                            'jenkel'    => 'l',
+                            'jenkel'    => 'p',
                             'nama'      => 'Siti Fatimah',
                             'email'     => 's.fatmagn9@gmail.com',
                             'no_hp'     => '0895333093116',

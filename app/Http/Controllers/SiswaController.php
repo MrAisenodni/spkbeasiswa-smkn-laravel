@@ -83,7 +83,12 @@ class SiswaController extends Controller
      */
     public function show($id)
     {
-        //
+        // Menampilkan Halaman Detail
+        $data = [
+            'siswa'         => $this->siswa->getData($id),
+        ];
+
+        return view('admin.siswa.show', $data);
     }
 
     /**

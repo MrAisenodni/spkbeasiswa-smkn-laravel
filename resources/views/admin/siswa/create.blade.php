@@ -58,7 +58,7 @@
                             </div>
                             <div class="form-group col-12">
                                 <label for="alamat">Alamat</label>
-                                <textarea class="form-control @error('alamat') is-invalid @enderror"" name="alamat" id="alamat" cols="30" rows="5">{{ old('alamat') }}</textarea>
+                                <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat" cols="30" rows="5">{{ old('alamat') }}</textarea>
                                 @error('alamat')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror

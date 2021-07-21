@@ -11,6 +11,12 @@ class SiswaModel extends Model
         return DB::table('siswa')->get();
     }
 
+    public function getData($id) {
+        return DB::table('siswa')
+                    ->where('id_siswa', $id)
+                    ->first();
+    }
+
     public function getCount() {
         return DB::table('siswa')->count();
     }
