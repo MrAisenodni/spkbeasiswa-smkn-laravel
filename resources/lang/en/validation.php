@@ -36,11 +36,11 @@ return [
     'date_equals' => 'The :attribute must be a date equal to :date.',
     'date_format' => 'The :attribute does not match the format :format.',
     'different' => 'The :attribute and :other must be different.',
-    'digits' => 'The :attribute must be :digits digits.',
-    'digits_between' => 'The :attribute must be between :min and :max digits.',
+    'digits' => ':attribute harus :digits digits.',
+    'digits_between' => ':attribute harus lebih besar dari :min dan lebih kecil dari :max angka.',
     'dimensions' => 'The :attribute has invalid image dimensions.',
     'distinct' => 'The :attribute field has a duplicate value.',
-    'email' => 'The :attribute must be a valid email address.',
+    'email' => ucfirst(':attribute').' tidak valid.',
     'ends_with' => 'The :attribute must end with one of the following: :values.',
     'exists' => 'The selected :attribute is invalid.',
     'file' => 'The :attribute must be a file.',
@@ -78,7 +78,7 @@ return [
         'array' => 'The :attribute must not have more than :value items.',
     ],
     'max' => [
-        'numeric' => 'The :attribute must not be greater than :max.',
+        'numeric' => ':attribute tidak boleh lebih besar dari :max.',
         'file' => ucfirst(':attribute').' tidak boleh lebih besar dari :max kilobytes.',
         'string' => ucfirst(':attribute').' tidak boleh lebih besar dari :max karakter.',
         'array' => 'The :attribute must not have more than :max items.',
@@ -86,7 +86,7 @@ return [
     'mimes' => 'The :attribute must be a file of type: :values.',
     'mimetypes' => 'The :attribute must be a file of type: :values.',
     'min' => [
-        'numeric' => 'The :attribute must be at least :min.',
+        'numeric' => ':attribute harus lebih besar dari :min.',
         'file' => ucfirst(':attribute').' harus lebih besar dari :min kilobytes.',
         'string' => ucfirst(':attribute').' harus lebih besar dari :min karakter.',
         'array' => 'The :attribute must have at least :min items.',
@@ -161,6 +161,8 @@ return [
         'nama_siswa'        => 'Nama Siswa',
         'no_hp'             => 'Nomor HP',
         'jenkel'            => 'Jenis Kelamin',
+        'email'             => 'Email',
+        'alamat'            => 'Alamat',
     ],
 
 ];

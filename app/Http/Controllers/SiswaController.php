@@ -45,7 +45,34 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Menambah Data ke dalam Database
+        $validation = $request->validate([
+            'nis'           => 'required|unique:siswa,nim|numeric',
+            'nama_siswa'    => 'required',
+            'jenkel'        => 'required',
+            'no_hp'         => 'required|numeric|digits_between:12,13',
+            'email'         => 'required|unique:siswa,email|email',
+            'alamat'        => 'required',
+        ]);
+
+        $data = [
+            'nim'           => $request->nis,
+            'nama'          => $request->nama_siswa,
+            'jenkel'        => $request->jenkel,
+            'no_hp'         => $request->no_hp,
+            'email'         => $request->email,
+            'alamat'        => $request->alamat,
+            'created_at'    => $this->current_time,
+            'created_by'    => 'Admin',
+        ];
+
+        $save = $this->siswa->tambahData($data);
+
+        if ($save) {
+            return redirect('/admin/siswa')->with('status', 'Data siswa berhasil ditambahkan.');
+        } else {
+            return redirect('/admin/siswa')->with('error', 'Data siswa gagal ditambahkan.');
+        }
     }
 
     /**
