@@ -24,4 +24,10 @@ class SiswaModel extends Model
     public function tambahData($data) {
         return DB::table('siswa')->insert($data);
     }
+
+    public function ubahData($data, $id) {
+        return DB::table('siswa')
+                    ->where('id_siswa', $id)
+                    ->update($data);
+    }
 }

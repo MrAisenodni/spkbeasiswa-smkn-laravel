@@ -104,7 +104,7 @@ class SiswaController extends Controller
             'siswa'         => $this->siswa->getData($id),
         ];
 
-        return view('admin.siswa.show', $data);
+        return view('admin.siswa.edit', $data);
     }
 
     /**
@@ -116,7 +116,34 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Mengubah Data ke dalam Database
+        $validation = $request->validate([
+            'nis'           => 'required|unique:siswa,nim,'.$id.',id_siswa|numeric',
+            'nama_siswa'    => 'required',
+            'jenkel'        => 'required',
+            'no_hp'         => 'required|numeric|digits_between:12,13',
+            'email'         => 'required|unique:siswa,email,'.$id.',id_siswa|email',
+            'alamat'        => 'required',
+        ]);
+
+        $data = [
+            'nim'           => $request->nis,
+            'nama'          => $request->nama_siswa,
+            'jenkel'        => $request->jenkel,
+            'no_hp'         => $request->no_hp,
+            'email'         => $request->email,
+            'alamat'        => $request->alamat,
+            'updated_at'    => $this->current_time,
+            'updated_by'    => 'Admin',
+        ];
+
+        $save = $this->siswa->ubahData($data, $id);
+
+        if ($save) {
+            return redirect('/admin/siswa')->with('status', 'Data siswa berhasil diubah.');
+        } else {
+            return redirect('/admin/siswa')->with('error', 'Data siswa gagal diubah.');
+        }
     }
 
     /**
