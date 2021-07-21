@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Ubah Subkriteria')
+@section('title', 'Ubah Siswa')
     
 @section('container')
 
@@ -9,50 +9,50 @@
         <div class="container-fluid center">
             <div class="row">
                 <div class="col-md-12 bg-white">
-                    <form method="POST" class="p-2 mb-2" action="/admin/subkriteria/{{ $subkriteria->id_subkriteria }}">
+                    <form method="POST" class="p-2 mb-2" action="/admin/siswa/{{ $siswa->id_siswa }}">
                         @method('PUT')
                         @csrf
-                        <div class="form-group">
-                            <label for="kd_kriteria">Kriteria</label>
-                            <select name="kd_kriteria" id="kd_kriteria" class="form-control @error('kd_kriteria') is-invalid @enderror">
-                                @foreach ($kriteria as $data)
-                                    @if (old('kd_kriteria') == $data->id_kriteria)
-                                        <option value="{{ $data->id_kriteria }}">{{ $data->kd_kriteria }} | {{ $data->nama }}</option>
-                                    @endif
-                                @endforeach
-                                <option value="{{ $subkriteria->id_kriteria }}" hidden>{{ $subkriteria->kd_kriteria }} | {{ $subkriteria->nama_kriteria }}</option>
-                                @foreach ($kriteria as $data)
-                                    <option value="{{ $data->id_kriteria }}">{{ $data->kd_kriteria }} | {{ $data->nama }}</option>
-                                @endforeach
-                            </select>
-                            @error('kd_kriteria')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="nama_subkriteria">Nama Subkriteria</label>
-                            <input type="text" class="form-control @error('nama_subkriteria') is-invalid @enderror" id="nama_subkriteria" name="nama_subkriteria" value="{{ $subkriteria->nama }}">
-                            @error('nama_subkriteria')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="bobot_subkriteria">Bobot Subkriteria</label>
-                            <input type="text" class="form-control @error('bobot_subkriteria') is-invalid @enderror" id="bobot_subkriteria" name="bobot_subkriteria" value="{{ $subkriteria->bobot }}">
-                            @error('bobot_subkriteria')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                            <div class="modal-footer">
-                                <a href="/admin/subkriteria">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                    <i class="fas fa-window-close"></i> Batal
-                                    </button>
-                                </a>
-                                <button type="submit" class="btn btn-primary" name="tambah">
-                                    <i class="fas fa-check"></i> Simpan
-                                </button>
+                        <div class="row">
+                            <div class="form-group col-3">
+                                <label for="nis">Nomor Induk Siswa</label>
+                                <input type="text" class="form-control" id="nis" value="{{ $siswa->nim }}" disabled>
                             </div>
+                            <div class="form-group col-9">
+                                <label for="nama_siswa">Nama Siswa</label>
+                                <input type="text" class="form-control" id="nama_siswa" value="{{ $siswa->nama }}" disabled>
+                            </div>
+                            <div class="form-group col-3">
+                                <label for="jenkel">Jenis Kelamin</label>
+                                <select name="jenkel" id="jenkel" class="form-control" disabled>
+                                    @if ($siswa->jenkel == 'l')
+                                        <option value="l">Laki-Laki</option>
+                                    @elseif ($siswa->jenkel == 'p')
+                                        <option value="p">Perempuan</option>
+                                    @endif
+                                </select>
+                            </div>
+                            <div class="form-group col-3">
+                                <label for="no_hp">Nomor HP</label>
+                                <input type="text" class="form-control" id="no_hp" value="{{ $siswa->no_hp }}" disabled>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" value="{{ $siswa->email }}" disabled>
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="alamat">Alamat</label>
+                                <textarea class="form-control" disabled id="alamat" cols="30" rows="5">{{ $siswa->alamat }}</textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="/admin/siswa">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                <i class="fas fa-window-close"></i> Batal
+                                </button>
+                            </a>
+                            <button type="submit" class="btn btn-primary" name="tambah">
+                                <i class="fas fa-check"></i> Simpan
+                            </button>
                         </div>
                     </form>
                 </div>

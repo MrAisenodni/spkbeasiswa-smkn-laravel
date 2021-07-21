@@ -99,7 +99,12 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Menampilkan Halaman Edit
+        $data = [
+            'siswa'         => $this->siswa->getData($id),
+        ];
+
+        return view('admin.siswa.show', $data);
     }
 
     /**
