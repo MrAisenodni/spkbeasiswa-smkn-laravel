@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\SubkriteriaController;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,12 @@ Route::get('/admin/subkriteria/{id}/edit', [SubkriteriaController::class, 'edit'
 Route::post('/admin/subkriteria', [SubkriteriaController::class, 'store']);
 Route::put('/admin/subkriteria/{id}', [SubkriteriaController::class, 'update']);
 Route::delete('/admin/subkriteria/{id}', [SubkriteriaController::class, 'destroy']);
+
+// Siswa
+Route::get('/admin/siswa', [SiswaController::class, 'index']);
+Route::get('/admin/siswa/create', [SiswaController::class, 'create']);
+Route::get('/admin/siswa/{id}', [SiswaController::class, 'show']);
+Route::get('/admin/siswa/{id}/edit', [SiswaController::class, 'edit']);
+Route::post('/admin/siswa', [SiswaController::class, 'store']);
+Route::put('/admin/siswa/{id}', [SiswaController::class, 'update']);
+Route::delete('/admin/siswa/{id}', [SiswaController::class, 'destroy']);
