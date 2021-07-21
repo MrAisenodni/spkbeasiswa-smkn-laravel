@@ -157,6 +157,10 @@ return [
         'bobot_kriteria'    => 'Bobot Kriteria',
         'nama_subkriteria'  => 'Nama Subkriteria',
         'bobot_subkriteria' => 'Bobot Subkriteria',
+        'nis'               => 'NIS',
+        'nama_siswa'        => 'Nama Siswa',
+        'no_hp'             => 'Nomor HP',
+        'jenkel'            => 'Jenis Kelamin',
     ],
 
 ];

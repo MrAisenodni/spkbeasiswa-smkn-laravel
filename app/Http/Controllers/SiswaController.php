@@ -33,7 +33,8 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        // Menampilkan Halaman Tambah
+        return view('admin.siswa.create');
     }
 
     /**
