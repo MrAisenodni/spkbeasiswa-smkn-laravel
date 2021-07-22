@@ -31,10 +31,7 @@
                             </div>
                             <div class="form-group col-9">
                                 <label for="nama_siswa">Nama Siswa</label>
-                                <input type="text" class="form-control @error('nama_siswa') is-invalid @enderror" id="nama_siswa" name="nama_siswa" value="{{ old('nama_siswa') }}">
-                                @error('nama_siswa')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <input type="text" class="form-control" id="nama_siswa" value="{{ old('nama_siswa') }}" disabled>
                             </div>
                             <div class="form-group col-3">
                                 <label for="jenkel">Jenis Kelamin</label>
