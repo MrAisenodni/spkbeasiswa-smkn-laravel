@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\RankModel;
 use App\Models\FileModel;
 use App\Models\SiswaModel;
+use App\Models\SubkriteriaModel;
 use Carbon\Carbon;
 
 class PendaftaranController extends Controller
@@ -14,6 +15,7 @@ class PendaftaranController extends Controller
         $this->rank         = new RankModel();
         $this->file         = new FileModel();
         $this->siswa        = new SiswaModel();
+        $this->subkriteria  = new SubkriteriaModel();
         $this->current_time = Carbon::now()->toDateTimeString();
     }
     /**
@@ -38,7 +40,13 @@ class PendaftaranController extends Controller
      */
     public function create()
     {
-        //
+        // Menampilkan Halaman Tambah
+        $data = [
+            'siswa'         => $this->siswa->getAllData(),
+            'subkriteria'   => $this->subkriteria->getAllData(),
+        ];
+
+        return view('admin.pendaftaran.create', $data);
     }
 
     /**
