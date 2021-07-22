@@ -14,7 +14,17 @@
                         <div class="row">
                             <div class="form-group col-3">
                                 <label for="nis">Nomor Induk Siswa</label>
-                                <input type="text" class="form-control @error('nis') is-invalid @enderror" id="nis" name="nis" value="{{ old('nis') }}">
+                                <select name="nis" id="nis" class="form-control @error('nis') is-invalid @enderror">
+                                    @foreach ($siswa as $item)
+                                        @if (old('nis') == $item->id_siswa)
+                                            <option value="{{ $item->id_siswa }}">{{ $data->nim }}</option>
+                                        @endif
+                                    @endforeach
+                                    <option value="" hidden>--- PILIH NIS ---</option>
+                                    @foreach ($siswa as $data)
+                                        <option value="{{ $data->id_siswa }}">{{ $data->nim }}</option>
+                                    @endforeach
+                                </select>
                                 @error('nis')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
