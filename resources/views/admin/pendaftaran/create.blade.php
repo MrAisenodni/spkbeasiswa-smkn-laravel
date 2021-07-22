@@ -33,40 +33,10 @@
                                 <label for="nama_siswa">Nama Siswa</label>
                                 <input type="text" class="form-control" id="nama_siswa" value="{{ old('nama_siswa') }}" disabled>
                             </div>
-                            <div class="form-group col-3">
-                                <label for="jenkel">Jenis Kelamin</label>
-                                <select name="jenkel" id="jenkel" class="form-control @error('jenkel') is-invalid @enderror">
-                                    @if (old('jenkel') == 'l')
-                                        <option value="l">Laki-Laki</option>
-                                    @elseif (old('jenkel') == 'p')
-                                        <option value="p">Perempuan</option>
-                                    @endif
-                                    <option value="" hidden>--- PILIH JENIS KELAMIN ---</option>
-                                    <option value="l">Laki-Laki</option>
-                                    <option value="p">Perempuan</option>
-                                </select>
-                                @error('jenkel')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group col-3">
-                                <label for="no_hp">Nomor HP</label>
-                                <input type="text" class="form-control @error('no_hp') is-invalid @enderror" id="no_hp" name="no_hp" value="{{ old('no_hp') }}">
-                                @error('no_hp')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group col-6">
+                            <div class="form-group col-12">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
                                 @error('email')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group col-12">
-                                <label for="alamat">Alamat</label>
-                                <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat" cols="30" rows="5">{{ old('alamat') }}</textarea>
-                                @error('alamat')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
