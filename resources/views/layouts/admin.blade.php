@@ -97,7 +97,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/admin/daftar" class="nav-link">
+                <a href="/admin/pendaftaran" class="nav-link">
                 <i class="nav-icon fas fa-file-alt"></i>
                 <p>
                     Pendaftaran
@@ -135,7 +135,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">@yield('title')</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

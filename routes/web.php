@@ -60,13 +60,13 @@ Route::put('/admin/siswa/{id}', [SiswaController::class, 'update']);
 Route::delete('/admin/siswa/{id}', [SiswaController::class, 'destroy']);
 
 // Siswa
-Route::get('/admin/pendaftaran', [Pendaftaran::class, 'index']);
-Route::get('/admin/pendaftaran/create', [Pendaftaran::class, 'create']);
-Route::get('/admin/pendaftaran/{id}', [Pendaftaran::class, 'show']);
-Route::get('/admin/pendaftaran/{id}/edit', [Pendaftaran::class, 'edit']);
-Route::post('/admin/pendaftaran', [Pendaftaran::class, 'store']);
-Route::put('/admin/pendaftaran/{id}', [Pendaftaran::class, 'update']);
-Route::delete('/admin/pendaftaran/{id}', [Pendaftaran::class, 'destroy']);
+Route::get('/admin/pendaftaran', [PendaftaranController::class, 'index']);
+Route::get('/admin/pendaftaran/create', [PendaftaranController::class, 'create']);
+Route::get('/admin/pendaftaran/{id}', [PendaftaranController::class, 'show']);
+Route::get('/admin/pendaftaran/{id}/edit', [PendaftaranController::class, 'edit']);
+Route::post('/admin/pendaftaran', [PendaftaranController::class, 'store']);
+Route::put('/admin/pendaftaran/{id}', [PendaftaranController::class, 'update']);
+Route::delete('/admin/pendaftaran/{id}', [PendaftaranController::class, 'destroy']);
 
 // Ranking
 Route::get('/admin/rank', [RankController::class, 'index']);

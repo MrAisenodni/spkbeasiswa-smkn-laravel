@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Pendaftaran')
+@section('title', 'Pendaftaran Beasiswa')
     
 @section('container')
 
@@ -11,7 +11,7 @@
             <div class="row">
                 <!-- col button -->
                 <div class="col-lg-9">
-                    <a href="/admin/pendaftaran/create" class="btn btn-success"><i class="fa fa-plus-circle"></i> Tambah Pendaftaran</a>
+                    <a href="/admin/pendaftaran/create" class="btn btn-success"><i class="fa fa-plus-circle"></i> Tambah Siswa</a>
                     <br><br>
                 </div>
                 <div class="col-lg-12">
@@ -33,31 +33,25 @@
                                     <th class="border border-secondary">No.</th>
                                     <th class="border border-secondary">NIS</th>
                                     <th class="border border-secondary">Nama</th>
-                                    <th class="border border-secondary">Jenis Kelamin</th>
+                                    <th class="border border-secondary">Total</th>
                                     <th class="border border-secondary" width="15%">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($pendaftaran as $data)
+                                @foreach ($rank as $data)
                                     <tr class="text-center">
                                         <td class="border border-secondary">{{ $loop->iteration }}</td>
                                         <td class="border border-secondary">{{ $data->nim }}</td>
                                         <td class="border border-secondary">{{ $data->nama }}</td>
+                                        <td class="border border-secondary">{{ $data->total }}</td>
                                         <td class="border border-secondary">
-                                            @if ($data->jenkel == 'l')
-                                                Laki-laki
-                                            @else
-                                                Permpuan
-                                            @endif
-                                        </td>
-                                        <td class="border border-secondary">
-                                            <a href="/admin/pendaftaran/{{ $data->id_pendaftaran }}/edit" class="btn btn-warning">
+                                            <a href="/admin/pendaftaran/{{ $data->id_rank }}/edit" class="btn btn-warning">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="/admin/pendaftaran/{{ $data->id_pendaftaran }}" class="btn btn-info">
+                                            <a href="/admin/pendaftaran/{{ $data->id_rank }}" class="btn btn-info">
                                                 <i class="fas fa-list"></i>
                                             </a>
-                                            <form method="POST" action="/admin/pendaftaran/{{ $data->id_pendaftaran }}" class="d-inline">
+                                            <form method="POST" action="/admin/pendaftaran/{{ $data->id_rank }}" class="d-inline">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger">
