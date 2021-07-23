@@ -18,6 +18,10 @@ class KriteriaModel extends Model
                     ->first();
     }
 
+    public function getCount() {
+        return DB::table('kriteria')->count();
+    }
+
     public function tambahData($data) {
         return DB::table('kriteria')->insert($data);
     }

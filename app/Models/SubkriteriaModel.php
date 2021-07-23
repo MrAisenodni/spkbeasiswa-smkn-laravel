@@ -24,8 +24,12 @@ class SubkriteriaModel extends Model
 
     public function getDataKriteria($item) {
         return DB::table('subkriteria')
-                    ->where('id_kriteria', $kriteria->id_kriteria)
+                    ->where('id_kriteria', $item)
                     ->get();
+    }
+
+    public function getCount() {
+        return DB::table('subkriteria')->count();
     }
 
     public function tambahData($data) {

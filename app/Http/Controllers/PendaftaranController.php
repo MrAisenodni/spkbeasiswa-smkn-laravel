@@ -43,24 +43,26 @@ class PendaftaranController extends Controller
     public function create()
     {
         // Menampilkan Halaman Tambah
-        // $item = $this->kriteria->getAllData();
 
-        while ($item = $this->kriteria->getAllData()) {
-            dd($item);
-            $data = [
-                'siswa'         => $this->siswa->getAllData(),
-                'kriteria'      => $this->kriteria->getAllData(),
-                'subkriteria'   => $this->subkriteria->getDataKriteria($item),
-                // 'penghasilan'   => $this->subkriteria->getDataKriteria(1),
-                // 'kepemilikan'   => $this->subkriteria->getDataKriteria(2),
-                // 'kondisi'       => $this->subkriteria->getDataKriteria(3),
-                // 'anggota'       => $this->subkriteria->getDataKriteria(4),
-                // 'kendaraan'     => $this->subkriteria->getDataKriteria(5),
-                // 'kebutuhan'     => $this->subkriteria->getDataKriteria(6),
-                // 'pembayaran'    => $this->subkriteria->getDataKriteria(7),
-                // 'jarak'         => $this->subkriteria->getDataKriteria(8),
-            ];
-        }
+        $data1 = [
+            'siswa'         => $this->siswa->getAllData(),
+            'kriteria'      => $this->kriteria->getAllData(),
+            // 'subkriteria'   => $this->subkriteria->getAllData(),
+            // 'penghasilan'   => $this->subkriteria->getDataKriteria(1),
+            // 'kepemilikan'   => $this->subkriteria->getDataKriteria(2),
+            // 'kondisi'       => $this->subkriteria->getDataKriteria(3),
+            // 'anggota'       => $this->subkriteria->getDataKriteria(4),
+            // 'kendaraan'     => $this->subkriteria->getDataKriteria(5),
+            // 'kebutuhan'     => $this->subkriteria->getDataKriteria(6),
+            // 'pembayaran'    => $this->subkriteria->getDataKriteria(7),
+            // 'jarak'         => $this->subkriteria->getDataKriteria(8),
+        ];
+
+        $data2 = [
+            'subkriteria'   =>$this->subkriteria->getDataKriteria($data1),
+        ];
+
+        $data = $data1+$data2;
 
         dd($data);
 
