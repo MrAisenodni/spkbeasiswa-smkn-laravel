@@ -15,9 +15,9 @@
                             <div class="form-group col-3">
                                 <label for="nis">Nomor Induk Siswa</label>
                                 <select name="nis" id="nis" class="form-control @error('nis') is-invalid @enderror">
-                                    @foreach ($siswa as $item)
-                                        @if (old('nis') == $item->id_siswa)
-                                            <option value="{{ $item->id_siswa }}">{{ $data->nim }}</option>
+                                    @foreach ($siswa as $data)
+                                        @if (old('nis') == $data->id_siswa)
+                                            <option value="{{ $data->id_siswa }}">{{ $data->nim }}</option>
                                         @endif
                                     @endforeach
                                     <option value="" hidden>--- PILIH NIS ---</option>
@@ -34,18 +34,18 @@
                                 <input type="text" class="form-control" id="nama_siswa" value="{{ old('nama_siswa') }}" disabled>
                             </div>
                             @foreach ($kriteria as $data)
-                                <label for="{{ $data->kd_kriteria }}">{{ $data->nama }}</label>
-                                <select name="{{ $data->kd_kriteria }}" id="{{ $data->kd_kriteria }}" class="form-control @error($data->kd_kriteria) is-invalid @enderror">
-                                    <option value="" hidden></option>
-                                    @for ($i = 0; $i < $ckriteria; $i++)
-                                        @php
-                                                
-                                        @endphp
-                                        @foreach ($subkriteria+$i as $datasub+$i)
-                                            <option value="{{ $datasub.$i->bobot }}">{{ $datasub.$i->nama }}</option>
-                                        @endforeach
-                                    @endfor
-                                </select>
+                                <div class="form-group col-6">
+                                    <label for="{{ $data->kd_kriteria }}">{{ $data->nama }}</label>
+                                    <select name="{{ $data->kd_kriteria }}" id="{{ $data->kd_kriteria }}" class="form-control @error($data->kd_kriteria) is-invalid @enderror">
+                                        <option value="" hidden></option>
+                                        {{-- @while ($subkriteria.$data->id_kriteria)
+                                            
+                                        @endwhile --}}
+                                            @foreach ($subkriteria = '$subkriteria'.$data->id_kriteria as $data)
+                                                <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
+                                            @endforeach
+                                    </select>
+                                </div>
                             @endforeach
                         </div>
                         <div class="modal-footer">
