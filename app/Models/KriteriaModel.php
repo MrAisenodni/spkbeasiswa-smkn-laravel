@@ -22,6 +22,12 @@ class KriteriaModel extends Model
         return DB::table('kriteria')->count();
     }
 
+    public function getSelectId() {
+        return DB::table('kriteria')
+                    ->select('id_kriteria')
+                    ->get();
+    }
+
     public function tambahData($data) {
         return DB::table('kriteria')->insert($data);
     }

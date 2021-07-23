@@ -58,9 +58,14 @@ class PendaftaranController extends Controller
             // 'jarak'         => $this->subkriteria->getDataKriteria(8),
         ];
 
-        $data2 = [
-            'subkriteria'   =>$this->subkriteria->getDataKriteria($data1),
-        ];
+        $item = $this->kriteria->getSelectId();
+
+        while ($item) {
+            // dd($item[1]->id_kriteria);
+            $data2 = [
+                'subkriteria'   =>$this->subkriteria->getDataKriteria($item[0]->id_kriteria),
+            ];
+        }
 
         $data = $data1+$data2;
 
