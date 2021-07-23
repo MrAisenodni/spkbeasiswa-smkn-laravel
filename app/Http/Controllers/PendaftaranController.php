@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\RankModel;
 use App\Models\FileModel;
 use App\Models\SiswaModel;
+use App\Models\KriteriaModel;
 use App\Models\SubkriteriaModel;
 use Carbon\Carbon;
 
@@ -15,6 +16,7 @@ class PendaftaranController extends Controller
         $this->rank         = new RankModel();
         $this->file         = new FileModel();
         $this->siswa        = new SiswaModel();
+        $this->kriteria     = new KriteriaModel();
         $this->subkriteria  = new SubkriteriaModel();
         $this->current_time = Carbon::now()->toDateTimeString();
     }
@@ -41,10 +43,26 @@ class PendaftaranController extends Controller
     public function create()
     {
         // Menampilkan Halaman Tambah
-        $data = [
-            'siswa'         => $this->siswa->getAllData(),
-            'subkriteria'   => $this->subkriteria->getAllData(),
-        ];
+        // $item = $this->kriteria->getAllData();
+
+        while ($item = $this->kriteria->getAllData()) {
+            dd($item);
+            $data = [
+                'siswa'         => $this->siswa->getAllData(),
+                'kriteria'      => $this->kriteria->getAllData(),
+                'subkriteria'   => $this->subkriteria->getDataKriteria($item),
+                // 'penghasilan'   => $this->subkriteria->getDataKriteria(1),
+                // 'kepemilikan'   => $this->subkriteria->getDataKriteria(2),
+                // 'kondisi'       => $this->subkriteria->getDataKriteria(3),
+                // 'anggota'       => $this->subkriteria->getDataKriteria(4),
+                // 'kendaraan'     => $this->subkriteria->getDataKriteria(5),
+                // 'kebutuhan'     => $this->subkriteria->getDataKriteria(6),
+                // 'pembayaran'    => $this->subkriteria->getDataKriteria(7),
+                // 'jarak'         => $this->subkriteria->getDataKriteria(8),
+            ];
+        }
+
+        dd($data);
 
         return view('admin.pendaftaran.create', $data);
     }

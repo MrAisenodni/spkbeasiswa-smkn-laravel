@@ -22,6 +22,12 @@ class SubkriteriaModel extends Model
                     ->first();
     }
 
+    public function getDataKriteria($item) {
+        return DB::table('subkriteria')
+                    ->where('id_kriteria', $kriteria->id_kriteria)
+                    ->get();
+    }
+
     public function tambahData($data) {
         return DB::table('subkriteria')
                     ->insert($data);

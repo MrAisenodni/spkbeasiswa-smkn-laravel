@@ -33,13 +33,15 @@
                                 <label for="nama_siswa">Nama Siswa</label>
                                 <input type="text" class="form-control" id="nama_siswa" value="{{ old('nama_siswa') }}" disabled>
                             </div>
-                            <div class="form-group col-12">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
-                                @error('email')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
+                            @foreach ($kriteria as $data)
+                                <label for="{{ $data->kd_kriteria }}">{{ $data->nama }}</label>
+                                <select name="{{ $data->kd_kriteria }}" id="{{ $data->kd_kriteria }}" class="form-control @error($data->kd_kriteria) is-invalid @enderror">
+                                    <option value="" hidden></option>
+                                    @foreach ($subkriteria as $datasub)
+                                        <option value="{{ $datasub->bobot }}">{{ $datasub->nama }}</option>
+                                    @endforeach
+                                </select>
+                            @endforeach
                         </div>
                         <div class="modal-footer">
                             <a href="/admin/siswa">
