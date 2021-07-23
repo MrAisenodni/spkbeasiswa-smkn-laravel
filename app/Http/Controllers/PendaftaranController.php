@@ -57,7 +57,7 @@ class PendaftaranController extends Controller
             $data1+$i = [
                 'subkriteria'.$i   =>$this->subkriteria->getDataKriteria($id),
             ];
-          
+    
         }
         dd($data1+$i);
         $data = $data1+$data2;
