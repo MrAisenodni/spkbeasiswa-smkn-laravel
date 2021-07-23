@@ -32,6 +32,12 @@ class SubkriteriaModel extends Model
         return DB::table('subkriteria')->count();
     }
 
+    public function getSelectId() {
+        return DB::table('subkriteria')
+                    ->select('id_kriteria')
+                    ->get();
+    }
+
     public function tambahData($data) {
         return DB::table('subkriteria')
                     ->insert($data);

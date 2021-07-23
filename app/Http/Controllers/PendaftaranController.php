@@ -43,32 +43,24 @@ class PendaftaranController extends Controller
     public function create()
     {
         // Menampilkan Halaman Tambah
-
         $data1 = [
             'siswa'         => $this->siswa->getAllData(),
             'kriteria'      => $this->kriteria->getAllData(),
-            // 'subkriteria'   => $this->subkriteria->getAllData(),
-            // 'penghasilan'   => $this->subkriteria->getDataKriteria(1),
-            // 'kepemilikan'   => $this->subkriteria->getDataKriteria(2),
-            // 'kondisi'       => $this->subkriteria->getDataKriteria(3),
-            // 'anggota'       => $this->subkriteria->getDataKriteria(4),
-            // 'kendaraan'     => $this->subkriteria->getDataKriteria(5),
-            // 'kebutuhan'     => $this->subkriteria->getDataKriteria(6),
-            // 'pembayaran'    => $this->subkriteria->getDataKriteria(7),
-            // 'jarak'         => $this->subkriteria->getDataKriteria(8),
         ];
 
         $item = $this->kriteria->getSelectId();
-
-        while ($item) {
-            // dd($item[1]->id_kriteria);
-            $data2 = [
-                'subkriteria'   =>$this->subkriteria->getDataKriteria($item[0]->id_kriteria),
+        
+        $i = 0;
+        while ($i < $this->kriteria->getCount()) {
+            $id = $item[$i]->id_kriteria;
+             
+            $data1+$i = [
+                'subkriteria'.$i   =>$this->subkriteria->getDataKriteria($id),
             ];
+
         }
-
+        dd($data1+$i);
         $data = $data1+$data2;
-
         dd($data);
 
         return view('admin.pendaftaran.create', $data);

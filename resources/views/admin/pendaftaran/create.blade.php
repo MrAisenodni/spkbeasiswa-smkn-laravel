@@ -37,7 +37,7 @@
                                 <label for="{{ $data->kd_kriteria }}">{{ $data->nama }}</label>
                                 <select name="{{ $data->kd_kriteria }}" id="{{ $data->kd_kriteria }}" class="form-control @error($data->kd_kriteria) is-invalid @enderror">
                                     <option value="" hidden></option>
-                                    @foreach ($subkriteria as $datasub)
+                                    @foreach ($subkriteria8 as $datasub)
                                         <option value="{{ $datasub->bobot }}">{{ $datasub->nama }}</option>
                                     @endforeach
                                 </select>
