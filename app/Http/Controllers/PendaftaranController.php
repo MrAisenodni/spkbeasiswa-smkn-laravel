@@ -46,22 +46,22 @@ class PendaftaranController extends Controller
         $data1 = [
             'siswa'         => $this->siswa->getAllData(),
             'kriteria'      => $this->kriteria->getAllData(),
+            'ckriteria'     => $this->kriteria->getCount(),
         ];
 
         $item = $this->kriteria->getSelectId();
-        
-        $i = 0;
-        while ($i < $this->kriteria->getCount()) {
+
+        for ($i = 0; $i < $this->kriteria->getCount(); $i++) {
             $id = $item[$i]->id_kriteria;
              
-            $data1+$i = [
-                'subkriteria'.$i   =>$this->subkriteria->getDataKriteria($id),
+            $data2 = [
+                'subkriteria'.$id   => $this->subkriteria->getDataKriteria($id),
             ];
-    
+
+            $data = $data1 + $data2;
+            $data1 = $data;    
         }
-        dd($data1+$i);
-        $data = $data1+$data2;
-        dd($data);
+        // dd($data);
 
         return view('admin.pendaftaran.create', $data);
     }
