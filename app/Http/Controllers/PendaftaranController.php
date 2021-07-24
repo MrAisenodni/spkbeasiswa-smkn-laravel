@@ -46,7 +46,8 @@ class PendaftaranController extends Controller
         $data1 = [
             'siswa'         => $this->siswa->getAllData(),
             'kriteria'      => $this->kriteria->getAllData(),
-            'ckriteria'     => $this->kriteria->getCount(),
+            // 'ckriteria'     => $this->kriteria->getCount(),
+            'skriteria'     => $this->subkriteria->getSelectId(),
         ];
 
         $item = $this->kriteria->getSelectId();

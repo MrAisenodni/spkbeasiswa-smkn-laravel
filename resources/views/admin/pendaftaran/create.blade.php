@@ -38,12 +38,43 @@
                                     <label for="{{ $data->kd_kriteria }}">{{ $data->nama }}</label>
                                     <select name="{{ $data->kd_kriteria }}" id="{{ $data->kd_kriteria }}" class="form-control @error($data->kd_kriteria) is-invalid @enderror">
                                         <option value="" hidden></option>
-                                        {{-- @while ($subkriteria.$data->id_kriteria)
-                                            
-                                        @endwhile --}}
-                                            @foreach ($subkriteria = '$subkriteria'.$data->id_kriteria as $data)
+                                        @if ($data->id_kriteria == 1)
+                                            @foreach ($subkriteria1 as $data)
                                                 <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
                                             @endforeach
+                                        @elseif ($data->id_kriteria == 2)
+                                            @foreach ($subkriteria2 as $data)
+                                                <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
+                                            @endforeach
+                                        @elseif ($data->id_kriteria == 3)
+                                            @foreach ($subkriteria3 as $data)
+                                                <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
+                                            @endforeach
+                                        @elseif ($data->id_kriteria == 4)
+                                            @foreach ($subkriteria4 as $data)
+                                                <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
+                                            @endforeach
+                                        @elseif ($data->id_kriteria == 5)
+                                            @foreach ($subkriteria5 as $data)
+                                                <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
+                                            @endforeach
+                                        @elseif ($data->id_kriteria == 6)
+                                            @foreach ($subkriteria6 as $data)
+                                                <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
+                                            @endforeach
+                                        @elseif ($data->id_kriteria == 7)
+                                            @foreach ($subkriteria7 as $data)
+                                                <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
+                                            @endforeach
+                                        @elseif ($data->id_kriteria == 8)
+                                            @foreach ($subkriteria8 as $data)
+                                                <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
+                                            @endforeach
+                                        @elseif ($data->id_kriteria == 15)
+                                            @foreach ($subkriteria15 as $data)
+                                                <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
+                                            @endforeach
+                                        @endif
                                     </select>
                                 </div>
                             @endforeach
