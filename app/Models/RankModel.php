@@ -33,4 +33,8 @@ class RankModel extends Model
                         ->count();
         }
     }
+
+    public function tambahData($data) {
+        return DB::table('rank')->insert($data);
+    }
 }

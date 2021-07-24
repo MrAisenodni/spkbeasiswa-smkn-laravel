@@ -75,7 +75,29 @@ class PendaftaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Menambahkan Data ke dalam Database
+        $data = [
+            'penghasilan'       => $request->C1,
+            'kepemilikan'       => $request->C2,
+            'kondisi'       => $request->C3,
+            'anggota'       => $request->C4,
+            'kendaraan'       => $request->C5,
+            'kebutuhan'       => $request->C6,
+            'pembayaran'       => $request->C7,
+            'jarak'       => $request->C8,
+            'total'         => ($request->C1+$request->C2),
+            'created_at'    => $this->current_time,
+            'created_by'    => 'Admin',
+        ];
+        dd($data);
+
+        $save = $this->rank->tambahData($data);
+
+        if ($save) {
+            redirect('/admin/pendaftaran')->with('status', 'Data siswa berhasil ditambahkan.');
+        } else {
+            redirect('/admin/pendaftaran')->with('error', 'Data siswa gagal ditambahkan.');
+        }
     }
 
     /**
