@@ -120,7 +120,8 @@ class PendaftaranController extends Controller
      */
     public function show($id)
     {
-        //
+        // Menampilkan Halaman Detail
+        return view('admin.pendaftaran.show', $data);
     }
 
     /**

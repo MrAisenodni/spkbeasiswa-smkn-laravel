@@ -22,7 +22,7 @@ class KriteriaModel extends Model
         return DB::table('kriteria')->count();
     }
 
-    public function getSelectId() {
+    public function getSelectId() { 
         return DB::table('kriteria')
                     ->select('id_kriteria')
                     ->get();
