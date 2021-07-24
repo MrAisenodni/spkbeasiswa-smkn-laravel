@@ -145,9 +145,10 @@ class KriteriaController extends Controller
     public function destroy($id)
     {
         // Menghapus Data dari Database
-        $save = $this->kriteria->hapusData($id);
+        $save1 = $this->kriteria->hapusData($id);
+        $save2 = $this->kriteria->hapusSubData($id);
 
-        if ($save) {
+        if ($save1 && $save2) {
             return redirect('/admin/kriteria')->with('status', 'Data kriteria berhasil dihapus.');
         } else {
             return redirect('/admin/kriteria')->with('error', 'Data kriteria gagal dihapus.');

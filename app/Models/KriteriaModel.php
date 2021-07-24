@@ -43,4 +43,9 @@ class KriteriaModel extends Model
                     ->where('id_kriteria', $id)
                     ->delete();
     }
+    public function hapusSubData($id) {
+        return DB::table('subkriteria')
+                    ->where('id_kriteria', $id)
+                    ->delete();
+    }
 }
