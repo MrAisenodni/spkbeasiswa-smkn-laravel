@@ -9,14 +9,14 @@
         <div class="container-fluid center">
             <div class="row">
                 <div class="col-md-12 bg-white">
-                    <form method="POST" class="p-2 mb-2" action="/admin/siswa">
+                    <form method="POST" class="p-2 mb-2" action="/admin/pendaftaran">
                         @csrf
                         <div class="row">
                             <div class="form-group col-3">
-                                <label for="nis">Nomor Induk Siswa</label>
-                                <select name="nis" id="nis" class="form-control @error('nis') is-invalid @enderror">
+                                <label for="siswa">Nomor Induk Siswa</label>
+                                <select name="siswa" id="siswa" class="form-control @error('siswa') is-invalid @enderror">
                                     @foreach ($siswa as $data)
-                                        @if (old('nis') == $data->id_siswa)
+                                        @if (old('siswa') == $data->id_siswa)
                                             <option value="{{ $data->id_siswa }}">{{ $data->nim }}</option>
                                         @endif
                                     @endforeach
@@ -25,7 +25,7 @@
                                         <option value="{{ $data->id_siswa }}">{{ $data->nim }}</option>
                                     @endforeach
                                 </select>
-                                @error('nis')
+                                @error('siswa')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -75,12 +75,15 @@
                                                 <option value="{{ $data->bobot }}">{{ $data->nama }}</option>
                                             @endforeach
                                         @endif
+                                        @error('{{ $data->kd_kriteria }}')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </select>
                                 </div>
                             @endforeach
                         </div>
                         <div class="modal-footer">
-                            <a href="/admin/siswa">
+                            <a href="/admin/pendaftaran">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                 <i class="fas fa-window-close"></i> Batal
                                 </button>

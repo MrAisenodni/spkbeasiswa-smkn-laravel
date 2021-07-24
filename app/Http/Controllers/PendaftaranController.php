@@ -76,27 +76,39 @@ class PendaftaranController extends Controller
     public function store(Request $request)
     {
         // Menambahkan Data ke dalam Database
+        $validated = $request->validate([
+            'siswa'     => 'required',
+            'C1'        => 'required',
+            'C2'        => 'required',
+            'C3'        => 'required',
+            'C4'        => 'required',
+            'C5'        => 'required',
+            'C6'        => 'required',
+            'C7'        => 'required',
+            'C8'        => 'required',
+        ]);
+
         $data = [
-            'penghasilan'       => $request->C1,
-            'kepemilikan'       => $request->C2,
+            'id_siswa'      =>$request->siswa,
+            'penghasilan'   => $request->C1,
+            'kepemilikan'   => $request->C2,
             'kondisi'       => $request->C3,
             'anggota'       => $request->C4,
-            'kendaraan'       => $request->C5,
-            'kebutuhan'       => $request->C6,
-            'pembayaran'       => $request->C7,
-            'jarak'       => $request->C8,
-            'total'         => ($request->C1+$request->C2),
+            'kendaraan'     => $request->C5,
+            'kebutuhan'     => $request->C6,
+            'pembayaran'    => $request->C7,
+            'jarak'         => $request->C8,
+            'total'         => ($request->C1+$request->C2+$request->C3+$request->C4+$request->C5+$request->C6+$request->C7+$request->C8)/8,
             'created_at'    => $this->current_time,
             'created_by'    => 'Admin',
         ];
-        dd($data);
 
         $save = $this->rank->tambahData($data);
 
         if ($save) {
-            redirect('/admin/pendaftaran')->with('status', 'Data siswa berhasil ditambahkan.');
+            return redirect('/admin/pendaftaran')->with('status', 'Data siswa berhasil ditambahkan.');
         } else {
-            redirect('/admin/pendaftaran')->with('error', 'Data siswa gagal ditambahkan.');
+            return redirect('/admin/pendaftaran')->with('error', 'Data siswa gagal ditambahkan.');
         }
     }
 
